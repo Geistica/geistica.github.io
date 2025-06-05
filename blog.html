@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Samuel</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      background-repeat: repeat;
+      padding: 2rem;
+    }
+
+    header, footer {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .blog-container {
+      max-width: 900px;
+      margin: 5rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .post {
+      border-left: 3px solid white;
+      padding-left: 2rem;
+    }
+
+    .post h2 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .post time {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .post p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+.site-footer {
+  border-top: 1px solid white;
+  padding: 4rem 2rem;
+  background-color: black;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.footer-block a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-block a:hover {
+  opacity: 0.6;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div>Samuel</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="blog-container">
+    <div class="post">
+      <h2>Working with Grid-Based Layouts</h2>
+      <time datetime="2025-03-05">March 5, 2025</time>
+      <p>Tips and considerations for creating ultra-precise layout structures in your static websites.</p>
+    </div>
+
+    <div class="post">
+      <h2>Retro Terminals in Modern CSS</h2>
+      <time datetime="2025-02-12">February 12, 2025</time>
+      <p>A dive into monospace aesthetics, cursor animations, and retro-inspired UIs for technical blogs and tools.</p>
+    </div>
+
+    <div class="post">
+      <h2>Animating SVGs for Abstract Depth</h2>
+      <time datetime="2025-01-22">January 22, 2025</time>
+      <p>How to combine layering, line art, and minimal motion to build living geometry in your site design.</p>
+    </div>
+  </div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-block identity">© 2025 SAMUEL</div>
+    <div class="footer-block nav-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

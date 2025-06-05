@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Samuel</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      background-repeat: repeat;
+      padding: 2rem;
+    }
+
+    header, footer {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-container {
+      max-width: 1200px;
+      margin: 5rem auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background: #111;
+      border: 1px solid #333;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.02);
+    }
+
+    .project h3 {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .project p {
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+.site-footer {
+  border-top: 1px solid white;
+  padding: 4rem 2rem;
+  background-color: black;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.footer-block a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-block a:hover {
+  opacity: 0.6;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div>Samuel</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="portfolio-container">
+    <div class="project">
+      <h3>Project Alpha</h3>
+      <p>A visual identity system blending brutalist UI with responsive static generation.</p>
+    </div>
+    <div class="project">
+      <h3>Interface Ghost</h3>
+      <p>An eerie experimental UI mimicking analog horror overlays and ghosted grids.</p>
+    </div>
+    <div class="project">
+      <h3>Monospace Terminal</h3>
+      <p>A simulated retro terminal interface with blinking cursors, typewriter intros, and sound.</p>
+    </div>
+    <div class="project">
+      <h3>Geometry Stack</h3>
+      <p>Modular layout engine composed from layered abstract geometry blocks and SVG rules.</p>
+    </div>
+  </div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-block identity">© 2025 SAMUEL</div>
+    <div class="footer-block nav-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

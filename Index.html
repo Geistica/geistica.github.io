@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samuel | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-size: 1.25rem;
+      line-height: 2rem;
+      background-color: black;
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      background-repeat: repeat;
+    }
+
+    .parallax-heading {
+      padding: 6rem 2rem 2rem;
+      text-align: center;
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+
+    .blocky-parallax {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+      background: black;
+      perspective: 1px;
+    }
+
+    .block-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("cement-layer.png");
+      background-size: cover;
+      background-position: center;
+      transform: translateZ(-1px) scale(2);
+      z-index: -1;
+      opacity: 0.15;
+    }
+
+    header, footer {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .intro {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro h1 {
+      font-size: 5vw;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-top: 1.5rem;
+      color: #aaa;
+    }
+
+    .shape, .object {
+      position: absolute;
+      border: 2px solid white;
+      opacity: 0.06;
+      animation: float 10s infinite ease-in-out;
+    }
+
+    .shape.circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      top: 10%;
+      left: 5%;
+    }
+
+    .shape.triangle {
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 80px solid white;
+      top: 20%;
+      right: 10%;
+    }
+
+    .shape.square {
+      width: 60px;
+      height: 60px;
+      top: 60%;
+      left: 25%;
+    }
+
+    .object.grid {
+      width: 150px;
+      height: 150px;
+      top: 40%;
+      left: 50%;
+      background-image: linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.04;
+      transform: translate(-50%, -50%);
+    }
+
+    .object.rings {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      top: 70%;
+      right: 15%;
+      box-shadow: 0 0 0 20px rgba(255,255,255,0.03),
+                  0 0 0 40px rgba(255,255,255,0.03),
+                  0 0 0 60px rgba(255,255,255,0.03);
+    }
+
+    .object.svg-deco {
+      width: 100px;
+      height: 100px;
+      top: 30%;
+      right: 35%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M 50,0 A 50,50 0 1,1 49.9,0 Z" fill="none" stroke="white" stroke-width="2"/></svg>') no-repeat center/contain;
+      opacity: 0.05;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+
+    .grid-diagonal {
+      width: 100%;
+      background: linear-gradient(135deg, white 50%, black 50%);
+      height: 300px;
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+      animation: diagonalFade 1.5s ease-out both;
+    }
+
+    @keyframes diagonalFade {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bw-statement {
+      padding: 6rem 2rem;
+      background: white;
+      color: black;
+      text-align: center;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+
+    .type-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding: 4rem 2rem;
+      gap: 3rem;
+    }
+
+    .type-block {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 2.5rem;
+      border-top: 1px solid #fff;
+      padding-top: 2rem;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .type-block:hover {
+      letter-spacing: 0.08em;
+      color: #ccc;
+    }
+
+.site-footer {
+  border-top: 1px solid white;
+  padding: 4rem 2rem;
+  background-color: black;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.footer-block a {
+  color: white;
+  text-decoration: none;
+  margin: 0 0.75rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-block a:hover {
+  opacity: 0.6;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div>Samuel</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="parallax-heading">
+    <h2>Brutalist Geometry</h2>
+  </section>
+
+  <div class="blocky-parallax">
+    <div class="block-layer"></div>
+  </div>
+
+  <section class="intro">
+    <p>Reducing design to its essential core: language, geometry, and bold contrast.</p>
+    <div class="shape circle"></div>
+    <div class="shape triangle"></div>
+    <div class="shape square"></div>
+    <div class="object grid"></div>
+    <div class="object rings"></div>
+    <div class="object svg-deco"></div>
+  </section>
+
+  <div class="grid-diagonal"></div>
+
+  <section class="bw-statement">
+    BLACK / WHITE = CODED COMMUNICATION
+  </section>
+
+  <section class="type-section">
+    <div class="type-block">Form is never neutral.</div>
+    <div class="type-block">Systems shape perception.</div>
+    <div class="type-block">Typography is architecture.</div>
+    <div class="type-block">Noise becomes grid.</div>
+  </section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-block identity">© 2025 SAMUEL</div>
+    <div class="footer-block nav-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
